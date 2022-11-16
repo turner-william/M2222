@@ -6,6 +6,7 @@ let n = 7
 import Swift
 import Foundation
 
+//caculates the factorial
 func factorial(n: Int) -> Int {
     var result = 1
     if (n > 0) {
@@ -15,6 +16,8 @@ func factorial(n: Int) -> Int {
     }
     return result
 }
+
+//handles the printing formatting
 func resultPrint(array: [Int]) {
     let arrayCount = array.count - 1
     for i in 0...arrayCount {
@@ -27,14 +30,18 @@ func resultPrint(array: [Int]) {
     print("The final result is: \(array[0]).")
 }
 
-var x = n
-var resultArray : [Int] = []
-while x != 0 {
-    print("Calculating factorial(\(x))...")
-    let result = factorial(n: x)
-    resultArray.append(result)
-    if result == 1 {
-        resultPrint(array: resultArray)
+//looping through all of the factorials that need printing
+func main(){
+    var x = n
+    var resultArray : [Int] = []
+    while x != 0 {
+        print("Calculating factorial(\(x))...")
+        let result = factorial(n: x)
+        resultArray.append(result)
+        if result == 1 {
+            resultPrint(array: resultArray)
+        }
+        x -= 1
     }
-    x -= 1
 }
+main()
